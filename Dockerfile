@@ -1,4 +1,4 @@
-FROM golang:1.15
+FROM golang:1.16
 # add source code
 RUN go get github.com/muratmirgun/api
 # create a working directory

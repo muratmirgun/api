@@ -1,16 +1,25 @@
 package main
 
 import (
+	"github.com/labstack/echo/v4"
 	"net/http"
-
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
-	r := gin.Default()
 
-	r.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{"data": "hello world"})
+	e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "")
 	})
-	r.Run()
+	e.GET(
+		"/users/:id",
+		getUser,
+	)
+	e.Logger.Fatal(e.Start(":4000"))
+
+}
+func getUser(c echo.Context) error {
+	// User ID from path `users/:id`
+	id := c.Param("id")
+	return c.String(http.StatusOK, id)
 }
