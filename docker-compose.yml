@@ -1,0 +1,13 @@
+version: '2'
+# Define services
+services:
+
+  # App Service
+  api:
+    # Configuration for building the docker image for the service
+    build:
+      context: . # Use an image built from the specified dockerfile in the current directory.
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    restart: unless-stopped
