@@ -1,4 +1,4 @@
-module github.com/qreasio/go-starter-kit
+module github.com/muratmirgun/api
 
 go 1.16
 
