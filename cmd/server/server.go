@@ -54,12 +54,7 @@ func Start(cfg *config.Config, r http.Handler, logger log.Logger) error {
 			return err
 		}
 
-		switch {
-		case sig == syscall.SIGSTOP:
-			return errors.New("integrity issue caused shutdown")
-		case err != nil:
-			return errors.Wrap(err, "could not stop server gracefully")
-		}
+
 	}
 
 	return nil

@@ -3,9 +3,10 @@ package server
 import (
 	"net/http"
 
-	"github.com/qreasio/go-starter-kit/pkg/mid"
 
-	"github.com/qreasio/go-starter-kit/internal/user"
+	"github.com/muratmirgun/api/pkg/mid"
+
+	"github.com/muratmirgun/api/internal/user"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/render"
